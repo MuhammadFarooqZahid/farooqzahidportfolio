@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muhammad_farooq/utils/animation.dart';
 import 'package:muhammad_farooq/utils/resposive_layout.dart';
 import 'dart:ui' as ui;
 
@@ -8,53 +9,56 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = Theme.of(context).textTheme;
+    final width = MediaQuery.sizeOf(context).width;
+    final height = MediaQuery.sizeOf(context).height;
 
     return ResposiveLayout(
-      desktopWidget: HeaderBackGround(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
+      desktopWidget: SizedBox(
+        height: height * 0.65,
+        child: Align(
           alignment: Alignment.centerLeft,
-          child: RichText(
-            text: TextSpan(
+          child: SizedBox(
+            width: width * 0.35,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                TextSpan(text: 'creating beautiful apps\n', style: style.headlineLarge),
-                TextSpan(text: 'and pushing boundaries\n', style: style.headlineLarge),
-                TextSpan(text: 'with ', style: style.headlineLarge),
-                TextSpan(
-                    text: 'flutter\n',
-                    style: style.headlineLarge!.copyWith(
-                      decoration: TextDecoration.underline,
-                      color: Colors.deepPurple,
-                      decorationStyle: TextDecorationStyle.wavy,
-                      decorationColor: Colors.deepPurple,
-                    )),
+                Text(
+                  'Farooq Zahid',
+                  style: style.headlineLarge!.copyWith(height: 1.5),
+                ).siteWidgetAnimation(),
+                Text(
+                  'This is your go-to destination for cutting-edge Flutter development that will transform your digital experiences. Say hello to a world of limitless possibilities!',
+                  style: style.bodyLarge!.copyWith(fontSize: 22),
+                ).siteWidgetAnimationDelayed()
               ],
             ),
           ),
         ),
       ),
-      mobileWidget: HeaderBackGround(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          alignment: Alignment.center,
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(text: 'creating beautiful apps\n', style: style.headlineMedium),
-                TextSpan(text: 'and pushing boundaries\n', style: style.headlineMedium),
-                TextSpan(text: 'with ', style: style.headlineMedium),
-                TextSpan(
-                    text: 'flutter\n',
-                    style: style.headlineMedium!.copyWith(
-                      decoration: TextDecoration.underline,
-                      color: Colors.deepPurple,
-                      decorationStyle: TextDecorationStyle.wavy,
-                      decorationColor: Colors.deepPurple,
-                    )),
-              ],
-            ),
+      mobileWidget: Container(
+        height: double.infinity,
+        width: double.infinity,
+        alignment: Alignment.center,
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                  text: 'creating beautiful apps\n',
+                  style: style.headlineMedium),
+              TextSpan(
+                  text: 'and pushing boundaries\n',
+                  style: style.headlineMedium),
+              TextSpan(text: 'with ', style: style.headlineMedium),
+              TextSpan(
+                  text: 'flutter\n',
+                  style: style.headlineMedium!.copyWith(
+                    decoration: TextDecoration.underline,
+                    color: Colors.deepPurple,
+                    decorationStyle: TextDecorationStyle.wavy,
+                    decorationColor: Colors.deepPurple,
+                  )),
+            ],
           ),
         ),
       ),

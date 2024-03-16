@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_farooq/src/screens/home_screen.dart';
+import 'package:muhammad_farooq/src/screens/dashboard_screen.dart';
 import 'package:muhammad_farooq/theme/site_theme.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Muhammad Farooq',
       debugShowCheckedModeBanner: false,
       theme: SiteTheme.lightTheme(),
-      home: const HomeScreen(),
+      home: const DashboardScreen(),
     );
   }
 }

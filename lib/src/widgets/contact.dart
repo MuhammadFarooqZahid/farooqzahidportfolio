@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_farooq/src/widgets/app_bar.dart';
+import 'package:muhammad_farooq/utils/clickable_nav_item.dart';
 import 'package:muhammad_farooq/utils/resposive_layout.dart';
 
 class Contact extends StatelessWidget {
@@ -13,8 +13,7 @@ class Contact extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '''Sounds like you're in luck
-because Farooq is here to help.''',
+            "Drop us a line and let's start\nbuilding something incredible together!",
             textAlign: TextAlign.center,
             style: style.headlineMedium,
           ),
@@ -22,26 +21,14 @@ because Farooq is here to help.''',
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ClickableNavItem(
-                  child: Text(
-                    'email',
-                    style: style.titleLarge,
-                  ),
-                  ontap: () {}),
+              ClickableNavItem(label: 'Gmail', ontap: () {}),
+              const SizedBox(width: 20),
+              ClickableNavItem(label: 'Instagram', ontap: () {}),
               const SizedBox(width: 20),
               ClickableNavItem(
-                  child: Text(
-                    'insta',
-                    style: style.titleLarge,
-                  ),
-                  ontap: () {}),
-              const SizedBox(width: 20),
-              ClickableNavItem(
-                  child: Text(
-                    'linkedin',
-                    style: style.titleLarge,
-                  ),
-                  ontap: () {}),
+                label: 'Linkedin',
+                ontap: () {},
+              ),
             ],
           ),
         ],
