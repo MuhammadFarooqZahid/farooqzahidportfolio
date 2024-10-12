@@ -20,7 +20,7 @@ class _ClickableNavItemState extends State<ClickableNavItem> {
   Widget build(BuildContext context) {
     final style = Theme.of(context).textTheme;
     return MouseRegion(
-      cursor: MaterialStateMouseCursor.clickable,
+      cursor: WidgetStateMouseCursor.clickable,
       onEnter: (event) => _onHoverChanged(enabled: true),
       onExit: (event) => _onHoverChanged(enabled: false),
       child: GestureDetector(

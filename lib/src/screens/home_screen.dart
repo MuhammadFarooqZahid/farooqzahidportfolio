@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         const HeaderSection(),
         const Text("Featured Projects").headlineLarge(context),
+        const SizedBox(height: 20),
         Column(
           children: List.generate(projects.length, (index) {
             return Column(

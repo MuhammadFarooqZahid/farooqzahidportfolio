@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_farooq/src/screens/dashboard_screen.dart';
 import 'package:muhammad_farooq/theme/site_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
